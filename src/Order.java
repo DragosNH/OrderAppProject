@@ -1,30 +1,44 @@
+import java.util.List;
+
 public class Order {
 
-    //Parameters
+    // Parameters
     private int orderID;
-    private String products;
+    private List<String> products;
     private int totalPrice;
     private String status;
 
+    // Constructor
     public Order(OrderBuilder orderBuilder) {
-        this.orderID = orderID;
-        this.products = products;
-        this.totalPrice = totalPrice;
-        this.status = status;
+        this.orderID = orderBuilder.getOrderID();
+        this.products = orderBuilder.getProducts();
+        this.totalPrice = orderBuilder.getTotalPrice();
+        this.status = orderBuilder.getStatus();
     }
 
-    //Getters
+    // Getters
     public int getOrderID() {
         return orderID;
     }
-    public String getProducts() {
+
+    public List<String> getProducts() {
         return products;
     }
+
     public int getTotalPrice() {
         return totalPrice;
     }
+
     public String getStatus() {
         return status;
     }
 
+    // ToString method for display
+    public String toString() {
+        return "Order ID: " + orderID + "\n"
+                + "Products: " + products + "\n"
+                + "Total Price: " + totalPrice + "\n"
+                + "Status: " + status + "\n"
+                + "----------------";
+    }
 }
