@@ -5,5 +5,11 @@ public class CryptoPayement implements IPaymentMethod {
     }
 
     @Override
-    public void display(){}
+    public void display(){
+        System.out.println(this);
+    }
+
+    public String toString(){
+        return "Payment method: Crypto";
+    }
 }

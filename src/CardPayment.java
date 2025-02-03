@@ -7,7 +7,11 @@ public class CardPayment implements IPaymentMethod {
 
     @Override
     public void display() {
+        System.out.println(this);
+    }
 
+    public String toString() {
+        return "Payement method: Credit card";
     }
 
 }
