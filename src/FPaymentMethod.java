@@ -1,6 +1,6 @@
 public class FPaymentMethod implements IPaymentMethod {
 
-    private static IPaymentMethod getPayementMethod(EPaymentMethod type) {
+    public static IPaymentMethod getPayementMethod(EPaymentMethod type) {
         switch (type) {
             case EPaymentMethod.CRYPTO -> {
                 return new CryptoPayement();
@@ -22,5 +22,9 @@ public class FPaymentMethod implements IPaymentMethod {
     @Override
     public void display() {
         System.out.println(this);
+    }
+
+    public String toString() {
+        return "Payment Method: " + getPayementMethod(EPaymentMethod.CRYPTO);
     }
 }

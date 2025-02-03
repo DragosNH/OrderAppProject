@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -8,5 +10,8 @@ public class Main {
                 .setStatus("Sent")
                 .build();
         System.out.println(order.toString());
+
+        FPaymentMethod paymentMethod = new FPaymentMethod();
+        System.out.println(paymentMethod.toString());
     }
 }
