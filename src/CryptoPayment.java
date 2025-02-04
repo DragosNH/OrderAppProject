@@ -1,4 +1,4 @@
-public class CryptoPayement implements IPaymentMethod {
+public class CryptoPayment implements IPaymentMethod {
     @Override
     public void pay(double amount) {
         System.out.println("Paying " + amount + " via Crypto.");

@@ -2,20 +2,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ObserverOrder {
+    private List<INotification> observers = new ArrayList<>();
 
-    private List<INotification> notifyUser = new ArrayList<>();
-
-    public void addObserver(INotification notifyUser) {
-        this.notifyUser.add(notifyUser);
+    public void addObserver(INotification observer) {
+        this.observers.add(observer);
     }
 
-    public void removeObserver(INotification notifyUser) {
-        this.notifyUser.remove(notifyUser);
+    public void removeObserver(INotification observer) {
+        this.observers.remove(observer);
     }
 
     public void notifyTheUsers(String message) {
-        for (INotification notifyUser : notifyUser) {
-            notifyUser.sendNotification(message);
+        for (INotification observer : observers) {
+            observer.sendNotification(message);
         }
     }
 }

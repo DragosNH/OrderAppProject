@@ -1,11 +1,11 @@
 public class FPaymentMethod implements IPaymentMethod {
 
-    public static IPaymentMethod getPayementMethod(EPaymentMethod type) {
+    public static IPaymentMethod getPaymentMethod(EPaymentMethod type) {
         switch (type) {
-            case EPaymentMethod.CRYPTO -> {
-                return new CryptoPayement();
+            case CRYPTO -> {
+                return new CryptoPayment();
             }
-            case EPaymentMethod.PAY_PAL -> {
+            case PAY_PAL -> {
                 return new PayPal();
             }
             default -> {
@@ -13,6 +13,7 @@ public class FPaymentMethod implements IPaymentMethod {
             }
         }
     }
+
 
     @Override
     public void pay(double amount) {
@@ -24,7 +25,4 @@ public class FPaymentMethod implements IPaymentMethod {
         System.out.println(this);
     }
 
-    public String toString() {
-        return "Payment Method: " + getPayementMethod(EPaymentMethod.CRYPTO);
-    }
 }

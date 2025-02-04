@@ -12,9 +12,15 @@ public class Main {
                 .setStatus("Sent")
                 .build();
 
-        System.out.println(order.toString());
+        System.out.println(order);
 
-        FPaymentMethod paymentMethod = new FPaymentMethod();
-        System.out.println(paymentMethod.toString());
+        IPaymentMethod paymentMethod = FPaymentMethod.getPaymentMethod(EPaymentMethod.CREDIT_CARD);
+        System.out.println(paymentMethod);
+
+        paymentMethod.pay(order.getTotalPrice());
+
+        ObserverOrder observerOrder = new ObserverOrder();
+        observerOrder.addObserver(message -> System.out.println("Notification: " + message));
+        observerOrder.notifyTheUsers("Your order has been processed!");
     }
 }
